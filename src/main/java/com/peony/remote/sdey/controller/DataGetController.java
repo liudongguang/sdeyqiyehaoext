@@ -12,7 +12,7 @@ public class DataGetController {
      * 获取门诊信息
      * @return
      */
-    @RequestMapping("getmzxx")
+    @RequestMapping("/getmzxx")
     @ResponseBody
     public ResultMsg getmzxx() {
 

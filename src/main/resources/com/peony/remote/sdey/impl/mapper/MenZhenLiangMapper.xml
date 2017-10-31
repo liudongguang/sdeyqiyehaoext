@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.peony.remote.sdey.impl.mapper.MenZhenLiangMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.MenZhenLiang">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="BRID" jdbcType="NUMERIC" property="brid"/>
+        <result column="GHRQ" jdbcType="DATE" property="ghrq"/>
+        <result column="KSMC" jdbcType="VARCHAR" property="ksmc"/>
+        <result column="YSMC" jdbcType="VARCHAR" property="ysmc"/>
+        <result column="SFJZ" jdbcType="NUMERIC" property="sfjz"/>
+    </resultMap>
+   <select id="getmzxx" resultMap="BaseResultMap" resultType="com.peony.remote.sdey.api.vo.ImportParam">
+       select BRID,GHRQ,KSMC,YSMC,SFJZ from hisrun.V_YZCX_MZXX_mzl where GHRQ BETWEEN #{starte} and #{end}
+   </select>
+</mapper>

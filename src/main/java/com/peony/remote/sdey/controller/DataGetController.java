@@ -1,8 +1,7 @@
 package com.peony.remote.sdey.controller;
 
 import com.peony.base.api.vo.ResultMsg;
-import com.peony.remote.sdey.api.po.MenZhenLiang;
-import com.peony.remote.sdey.api.po.YuYueLiang;
+import com.peony.remote.sdey.api.po.*;
 import com.peony.remote.sdey.api.service.DataGetService;
 import com.peony.remote.sdey.api.vo.ImportParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +29,8 @@ public class DataGetController {
     @RequestMapping("/getmzxx")
     @ResponseBody
     public ResultMsg getmzxx(ImportParam param) {
-        LocalDate start=LocalDate.of(2017,3,3);
-        LocalDate end=LocalDate.of(2017,4,3);
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
         ZonedDateTime zdtend = end.atStartOfDay(zoneId);
@@ -44,14 +43,15 @@ public class DataGetController {
 
     /**
      * 预约量
+     *
      * @param param
      * @return
      */
     @RequestMapping("/getyyl")
     @ResponseBody
     public ResultMsg getyyl(ImportParam param) {
-        LocalDate start=LocalDate.of(2017,3,3);
-        LocalDate end=LocalDate.of(2017,4,3);
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
         ZoneId zoneId = ZoneId.systemDefault();
         ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
         ZonedDateTime zdtend = end.atStartOfDay(zoneId);
@@ -61,4 +61,83 @@ public class DataGetController {
         System.out.println(rs.size());
         return new ResultMsg();
     }
+
+    /**
+     *
+     * 疾病诊断
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getjbzd")
+    @ResponseBody
+    public ResultMsg getjbzd(ImportParam param) {
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+        param.setStarte(Date.from(zdtstart.toInstant()));
+        param.setEnd(Date.from(zdtend.toInstant()));
+        List<JBZDLiang> rs = dataGetService.getjbzd(param);
+        System.out.println(rs.size());
+        return new ResultMsg();
+    }
+
+    /**
+     *
+     * 医技信息
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getyjxx")
+    @ResponseBody
+    public ResultMsg getyjxx(ImportParam param) {
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+        param.setStarte(Date.from(zdtstart.toInstant()));
+        param.setEnd(Date.from(zdtend.toInstant()));
+        List<YiJiInfo> rs = dataGetService.getyjxx(param);
+        System.out.println(rs.size());
+        return new ResultMsg();
+    }
+
+    /**
+     *
+     * 医技信息
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getyjhl")
+    @ResponseBody
+    public ResultMsg getyjhl(ImportParam param) {
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+        param.setStarte(Date.from(zdtstart.toInstant()));
+        param.setEnd(Date.from(zdtend.toInstant()));
+        List<YJHLInfo> rs = dataGetService.getyjhl(param);
+        System.out.println(rs.size());
+        return new ResultMsg();
+    }
+
+    @RequestMapping("/gethzxx")
+    @ResponseBody
+    public ResultMsg gethzxx(ImportParam param) {
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+        param.setStarte(Date.from(zdtstart.toInstant()));
+        param.setEnd(Date.from(zdtend.toInstant()));
+        List<HzxxInfo> rs = dataGetService.gethzxx(param);
+        System.out.println(rs.size());
+        return new ResultMsg();
+    }
+
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.YijihlMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.YJHLInfo">
+        <result column="RQ" jdbcType="DATE" property="rq"/>
+        <result column="ZYHM" jdbcType="VARCHAR" property="zyhm"/>
+        <result column="BRXM" jdbcType="VARCHAR" property="brxm"/>
+        <result column="BRXB" jdbcType="VARCHAR" property="brxb"/>
+        <result column="BRKS" jdbcType="VARCHAR" property="brks"/>
+        <result column="BRBQ" jdbcType="VARCHAR" property="brbq"/>
+        <result column="KSSJ" jdbcType="DATE" property="kssj"/>
+        <result column="TZSJ" jdbcType="DATE" property="tzsj"/>
+        <result column="YZMC" jdbcType="VARCHAR" property="yzmc"/>
+    </resultMap>
+    <select id="getyjhl" resultMap="BaseResultMap">
+        SELECT
+            RQ,
+            ZYHM,
+            BRXM,
+            BRXB,
+            BRKS,
+            BRBQ,
+            KSSJ,
+            TZSJ,
+            YZMC
+        FROM hisrun.v_yzcx_yjhl
+        WHERE RQ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

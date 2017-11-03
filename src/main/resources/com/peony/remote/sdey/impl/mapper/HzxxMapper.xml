@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.HzxxMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.HzxxInfo">
+
+        <result column="ZYHM" jdbcType="VARCHAR" property="zyhm"/>
+        <result column="BRXM" jdbcType="VARCHAR" property="brxm"/>
+        <result column="BRXB" jdbcType="VARCHAR" property="brxb"/>
+        <result column="BRKS" jdbcType="VARCHAR" property="brks"/>
+        <result column="SQSJ" jdbcType="DATE" property="sqsj"/>
+        <result column="QRBZ" jdbcType="VARCHAR" property="qrbz"/>
+        <result column="SQKS" jdbcType="VARCHAR" property="sqks"/>
+        <result column="QRGH" jdbcType="VARCHAR" property="qrgh"/>
+        <result column="QRSJ" jdbcType="DATE" property="qrsj"/>
+    </resultMap>
+
+    <select id="gethzxx" resultMap="BaseResultMap">
+        SELECT
+            ZYHM,
+            BRXM,
+            BRXB,
+            BRKS,
+            SQSJ,
+            QRBZ,
+            SQKS,
+            QRGH,
+            QRSJ
+        FROM hisrun.v_yzcx_hzxx
+        WHERE SQSJ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

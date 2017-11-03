@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.YijiMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.YiJiInfo">
+        <result column="BRBH" jdbcType="VARCHAR" property="brbh"/>
+        <result column="BRXM" jdbcType="VARCHAR" property="brxm"/>
+        <result column="KDKS" jdbcType="VARCHAR" property="kdks"/>
+        <result column="YSDM" jdbcType="VARCHAR" property="ysdm"/>
+        <result column="ZXKS" jdbcType="VARCHAR" property="zxks"/>
+        <result column="KDRQ" jdbcType="DATE" property="kdrq"/>
+        <result column="ZXRQ" jdbcType="DATE" property="zxrq"/>
+        <result column="FYXH" jdbcType="VARCHAR" property="fyxh"/>
+        <result column="FYMC" jdbcType="VARCHAR" property="fymc"/>
+        <result column="FYGB" jdbcType="VARCHAR" property="fygb"/>
+        <result column="HJJE" jdbcType="NUMERIC" property="hjje"/>
+    </resultMap>
+    <select id="getyjxx" resultType="com.peony.remote.sdey.api.po.YiJiInfo">
+        SELECT
+            BRBH,
+            BRXM,
+            KDKS,
+            YSDM,
+            ZXKS,
+            KDRQ,
+            ZXRQ,
+            FYXH,
+            FYMC,
+            FYGB,
+            HJJE
+        FROM hisrun.V_YZCX_yjxx
+        WHERE KDRQ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

@@ -5,7 +5,7 @@
         <!--
           WARNING - @mbg.generated
         -->
-        <id column="BRID" jdbcType="NUMERIC" property="brid"/>
+        <result column="BRID" jdbcType="NUMERIC" property="brid"/>
         <result column="GHRQ" jdbcType="DATE" property="ghrq"/>
         <result column="KSMC" jdbcType="VARCHAR" property="ksmc"/>
         <result column="YSMC" jdbcType="VARCHAR" property="ysmc"/>

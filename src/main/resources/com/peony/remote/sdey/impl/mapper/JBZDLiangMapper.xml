@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.JBZDLiangMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.JBZDLiang">
+        <!--
+          WARNING - @mbg.generated
+        -->
+
+        <result column="RQ" jdbcType="DATE" property="rq"/>
+        <result column="JBMC" jdbcType="VARCHAR" property="jbmc"/>
+
+    </resultMap>
+    <select id="getjbzd" resultMap="BaseResultMap" resultType="com.peony.remote.sdey.api.vo.ImportParam">
+        select RQ,JBMC from hisrun.V_YZCX_MZXX_jbzb where RQ BETWEEN #{starte} and #{end}
+    </select>
+</mapper>

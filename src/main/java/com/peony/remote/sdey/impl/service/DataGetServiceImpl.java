@@ -26,6 +26,8 @@ public class DataGetServiceImpl implements DataGetService {
     private YijihlMapper yijihlMapper;//护理
     @Autowired
     private HzxxMapper hzxxMapper;//会诊信息
+    @Autowired
+    private ZybrMapper zybrMapper;//住院病人
     @Override
     public List<MenZhenLiang> getmzxx(ImportParam param) {
         return menzhenLiangMapper.getmzxx(param);
@@ -54,5 +56,10 @@ public class DataGetServiceImpl implements DataGetService {
     @Override
     public List<HzxxInfo> gethzxx(ImportParam param) {
         return hzxxMapper.gethzxx(param);
+    }
+
+    @Override
+    public List<ZybrInfo> getzybr(ImportParam param) {
+        return zybrMapper.getzybr(param);
     }
 }

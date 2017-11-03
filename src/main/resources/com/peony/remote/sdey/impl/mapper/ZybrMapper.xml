@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.ZybrMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.ZybrInfo">
+        <result column="ZYH" jdbcType="VARCHAR" property="zyh"/>
+        <result column="ZYHM" jdbcType="VARCHAR" property="zyhm"/>
+        <result column="BRXM" jdbcType="VARCHAR" property="brxm"/>
+        <result column="BRXB" jdbcType="VARCHAR" property="brxb"/>
+        <result column="CSNY" jdbcType="DATE" property="csny"/>
+        <result column="HKDZ" jdbcType="VARCHAR" property="hkdz"/>
+        <result column="BRQK" jdbcType="VARCHAR" property="brqk"/>
+        <result column="BRKS" jdbcType="VARCHAR" property="brks"/>
+        <result column="BRBQ" jdbcType="VARCHAR" property="brbq"/>
+        <result column="RYRQ" jdbcType="DATE" property="ryrq"/>
+        <result column="CYRQ" jdbcType="DATE" property="cyrq"/>
+        <result column="CYFS" jdbcType="VARCHAR" property="cyfs"/>
+    </resultMap>
+    <select id="getzybr" resultMap="BaseResultMap">
+        SELECT
+            ZYH,
+            ZYHM,
+            BRXM,
+            BRXB,
+            CSNY,
+            HKDZ,
+            BRQK,
+            BRKS,
+            BRBQ,
+            RYRQ,
+            CYRQ,
+            CYFS
+        FROM hisrun.v_yzcx_zybr
+        WHERE CYRQ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

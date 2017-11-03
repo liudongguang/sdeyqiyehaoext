@@ -20,4 +20,6 @@ public interface DataGetService {
     List<YJHLInfo> getyjhl(ImportParam param);
 
     List<HzxxInfo> gethzxx(ImportParam param);
+
+    List<ZybrInfo> getzybr(ImportParam param);
 }

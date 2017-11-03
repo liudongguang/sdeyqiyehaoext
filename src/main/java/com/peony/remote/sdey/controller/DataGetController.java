@@ -140,4 +140,19 @@ public class DataGetController {
         return new ResultMsg();
     }
 
+    @RequestMapping("/getzybr")
+    @ResponseBody
+    public ResultMsg getzybr(ImportParam param) {
+        LocalDate start = LocalDate.of(2017, 3, 3);
+        LocalDate end = LocalDate.of(2017, 4, 3);
+        ZoneId zoneId = ZoneId.systemDefault();
+        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+        param.setStarte(Date.from(zdtstart.toInstant()));
+        param.setEnd(Date.from(zdtend.toInstant()));
+        List<ZybrInfo> rs = dataGetService.getzybr(param);
+        System.out.println(rs.size());
+        return new ResultMsg();
+    }
+
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.xml.transform.Result;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -29,16 +30,17 @@ public class DataGetController {
     @RequestMapping("/getmzxx")
     @ResponseBody
     public ResultMsg getmzxx(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
+//        LocalDate start = LocalDate.of(2017, 3, 3);
+//        LocalDate end = LocalDate.of(2017, 4, 3);
+//        ZoneId zoneId = ZoneId.systemDefault();
+//        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+//        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+//        param.setStarte(Date.from(zdtstart.toInstant()));
+//        param.setEnd(Date.from(zdtend.toInstant()));
         List<MenZhenLiang> rs = dataGetService.getmzxx(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
     /**
@@ -50,16 +52,17 @@ public class DataGetController {
     @RequestMapping("/getyyl")
     @ResponseBody
     public ResultMsg getyyl(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
+//        LocalDate start = LocalDate.of(2017, 3, 3);
+//        LocalDate end = LocalDate.of(2017, 4, 3);
+//        ZoneId zoneId = ZoneId.systemDefault();
+//        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+//        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+//        param.setStarte(Date.from(zdtstart.toInstant()));
+//        param.setEnd(Date.from(zdtend.toInstant()));
         List<YuYueLiang> rs = dataGetService.getyyl(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
     /**
@@ -71,16 +74,17 @@ public class DataGetController {
     @RequestMapping("/getjbzd")
     @ResponseBody
     public ResultMsg getjbzd(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
+//        LocalDate start = LocalDate.of(2017, 3, 3);
+//        LocalDate end = LocalDate.of(2017, 4, 3);
+//        ZoneId zoneId = ZoneId.systemDefault();
+//        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
+//        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
+//        param.setStarte(Date.from(zdtstart.toInstant()));
+//        param.setEnd(Date.from(zdtend.toInstant()));
         List<JBZDLiang> rs = dataGetService.getjbzd(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
     /**
@@ -100,13 +104,14 @@ public class DataGetController {
         param.setStarte(Date.from(zdtstart.toInstant()));
         param.setEnd(Date.from(zdtend.toInstant()));
         List<YiJiInfo> rs = dataGetService.getyjxx(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
     /**
      *
-     * 医技信息
+     * 医技护理信息
      * @param param
      * @return
      */
@@ -121,10 +126,16 @@ public class DataGetController {
         param.setStarte(Date.from(zdtstart.toInstant()));
         param.setEnd(Date.from(zdtend.toInstant()));
         List<YJHLInfo> rs = dataGetService.getyjhl(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
+    /**
+     * 会诊
+     * @param param
+     * @return
+     */
     @RequestMapping("/gethzxx")
     @ResponseBody
     public ResultMsg gethzxx(ImportParam param) {
@@ -136,10 +147,16 @@ public class DataGetController {
         param.setStarte(Date.from(zdtstart.toInstant()));
         param.setEnd(Date.from(zdtend.toInstant()));
         List<HzxxInfo> rs = dataGetService.gethzxx(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
+    /**
+     * 病人
+     * @param param
+     * @return
+     */
     @RequestMapping("/getzybr")
     @ResponseBody
     public ResultMsg getzybr(ImportParam param) {
@@ -151,8 +168,9 @@ public class DataGetController {
         param.setStarte(Date.from(zdtstart.toInstant()));
         param.setEnd(Date.from(zdtend.toInstant()));
         List<ZybrInfo> rs = dataGetService.getzybr(param);
-        System.out.println(rs.size());
-        return new ResultMsg();
+        ResultMsg msg=new ResultMsg();
+        msg.setData(rs);
+        return msg;
     }
 
 }

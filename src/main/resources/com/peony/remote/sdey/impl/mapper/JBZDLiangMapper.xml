@@ -11,6 +11,6 @@
 
     </resultMap>
     <select id="getjbzd" resultMap="BaseResultMap" resultType="com.peony.remote.sdey.api.vo.ImportParam">
-        select RQ,JBMC from hisrun.V_YZCX_MZXX_jbzb where RQ BETWEEN #{starte} and #{end}
+        select RQ,JBMC from hisrun.V_YZCX_MZXX_jbzb where jbmc is not null and RQ BETWEEN #{starte} and #{end}
     </select>
 </mapper>

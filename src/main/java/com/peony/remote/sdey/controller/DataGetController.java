@@ -59,6 +59,7 @@ public class DataGetController {
 //        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
 //        param.setStarte(Date.from(zdtstart.toInstant()));
 //        param.setEnd(Date.from(zdtend.toInstant()));
+        System.out.println(param);
         List<YuYueLiang> rs = dataGetService.getyyl(param);
         ResultMsg msg=new ResultMsg();
         msg.setData(rs);

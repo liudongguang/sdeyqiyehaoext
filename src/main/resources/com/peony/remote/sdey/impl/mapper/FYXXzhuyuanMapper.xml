@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.FYXXzhuyuanMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.FYXXzhuyuan">
+        <result column="BRKS" jdbcType="VARCHAR" property="brks"/>
+        <result column="RYRQ" jdbcType="DATE" property="ryrq"/>
+        <result column="CYRQ" jdbcType="DATE" property="cyrq"/>
+        <result column="ZXKS" jdbcType="VARCHAR" property="zxks"/>
+        <result column="FYMC" jdbcType="VARCHAR" property="fymc"/>
+        <result column="ZJJE" jdbcType="NUMERIC" property="zjje"/>
+        <result column="FYXM" jdbcType="VARCHAR" property="fyxm"/>
+        <result column="JFRQ" jdbcType="DATE" property="jfrq"/>
+    </resultMap>
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+        SELECT
+           BRKS,RYRQ,CYRQ,ZXKS,FYMC,ZJJE,FYXM,JFRQ
+        FROM hisrun.v_yzcx_fymx
+        WHERE CYRQ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.FYXXmenzhenchufangMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.FYXXmenzhenchufang">
+        <result column="KFRQ" jdbcType="DATE" property="kfrq"/>
+        <result column="FYRQ" jdbcType="DATE" property="fyrq"/>
+        <result column="KS" jdbcType="VARCHAR" property="ks"/>
+        <result column="HJJE" jdbcType="NUMERIC" property="hjje"/>
+    </resultMap>
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+        SELECT
+           KFRQ,FYRQ,KS,HJJE
+        FROM hisrun.v_yzcx_mzcf
+        WHERE KFRQ BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

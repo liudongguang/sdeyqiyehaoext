@@ -22,4 +22,25 @@ public interface DataGetService {
     List<HzxxInfo> gethzxx(ImportParam param);
 
     List<ZybrInfo> getzybr(ImportParam param);
+
+    /**
+     * 费用门诊处方
+     * @param param
+     * @return
+     */
+    List<FYXXmenzhenchufang> getmenzhenfycf(ImportParam param);
+
+    /**
+     * 费用门诊医技
+     * @param param
+     * @return
+     */
+    List<FYXXmenzhenyiji> getmenzhenfyyj(ImportParam param);
+
+    /**
+     * 住院费用
+     * @param param
+     * @return
+     */
+    List<FYXXzhuyuan> getzhuyuanfy(ImportParam param);
 }

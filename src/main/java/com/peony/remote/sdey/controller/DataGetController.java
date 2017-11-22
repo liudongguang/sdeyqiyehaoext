@@ -14,7 +14,9 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping(value = "/data")
@@ -59,7 +61,6 @@ public class DataGetController {
 //        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
 //        param.setStarte(Date.from(zdtstart.toInstant()));
 //        param.setEnd(Date.from(zdtend.toInstant()));
-        System.out.println(param);
         List<YuYueLiang> rs = dataGetService.getyyl(param);
         ResultMsg msg=new ResultMsg();
         msg.setData(rs);
@@ -85,6 +86,27 @@ public class DataGetController {
         List<JBZDLiang> rs = dataGetService.getjbzd(param);
         ResultMsg msg=new ResultMsg();
         msg.setData(rs);
+        return msg;
+    }
+
+    /**
+     *
+     * 费用信息
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getfyxx")
+    @ResponseBody
+    public ResultMsg getfyxx(ImportParam param) {
+        ResultMsg msg=new ResultMsg();
+        List<FYXXmenzhenchufang> menzhenfycf=dataGetService.getmenzhenfycf(param);//获取门诊处方
+        List<FYXXmenzhenyiji> menzhenfyyj=dataGetService.getmenzhenfyyj(param);//获取门诊医技
+        List<FYXXzhuyuan> zhuyuanfy=dataGetService.getzhuyuanfy(param);//获取住院费用
+        Map<String,Object> data=new HashMap<>();
+        data.put("menzhenfycf",menzhenfycf);
+        data.put("menzhenfyyj",menzhenfyyj);
+        data.put("zhuyuanfy",zhuyuanfy);
+        msg.setData(data);
         return msg;
     }
 

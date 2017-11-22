@@ -28,6 +28,14 @@ public class DataGetServiceImpl implements DataGetService {
     private HzxxMapper hzxxMapper;//会诊信息
     @Autowired
     private ZybrMapper zybrMapper;//住院病人
+
+    @Autowired
+    private FYXXmenzhenchufangMapper fyxXmenzhenchufangMapper;//
+    @Autowired
+    private FYXXmenzhenyijiMapper fyxXmenzhenyijiMapper;//
+    @Autowired
+    private FYXXzhuyuanMapper fyxXzhuyuanMapper;//
+
     @Override
     public List<MenZhenLiang> getmzxx(ImportParam param) {
         return menzhenLiangMapper.getmzxx(param);
@@ -61,5 +69,20 @@ public class DataGetServiceImpl implements DataGetService {
     @Override
     public List<ZybrInfo> getzybr(ImportParam param) {
         return zybrMapper.getzybr(param);
+    }
+
+    @Override
+    public List<FYXXmenzhenchufang> getmenzhenfycf(ImportParam param) {
+        return fyxXmenzhenchufangMapper.getInfoByBetweenDate(param);
+    }
+
+    @Override
+    public List<FYXXmenzhenyiji> getmenzhenfyyj(ImportParam param) {
+        return fyxXmenzhenyijiMapper.getInfoByBetweenDate(param);
+    }
+
+    @Override
+    public List<FYXXzhuyuan> getzhuyuanfy(ImportParam param) {
+        return fyxXzhuyuanMapper.getInfoByBetweenDate(param);
     }
 }

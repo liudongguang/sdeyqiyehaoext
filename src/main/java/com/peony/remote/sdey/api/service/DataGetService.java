@@ -43,4 +43,25 @@ public interface DataGetService {
      * @return
      */
     List<FYXXzhuyuan> getzhuyuanfy(ImportParam param);
+
+    /**
+     * 床位
+     * @param param
+     * @return
+     */
+    List<ZYXXchuangwei> getZYXXChuangwei(ImportParam param);
+
+    /**
+     * 转科
+     * @param param
+     * @return
+     */
+    List<ZYXXzhuanke> getZYXXZhuanke(ImportParam param);
+
+    /**
+     * 病人情况
+     * @param param
+     * @return
+     */
+    List<ZYXXzhuyuanbr> getZYXXBingren(ImportParam param);
 }

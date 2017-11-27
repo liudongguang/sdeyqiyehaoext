@@ -109,7 +109,26 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
-
+    /**
+     *
+     * 住院信息
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getfyxx")
+    @ResponseBody
+    public ResultMsg getzyxx(ImportParam param) {
+        ResultMsg msg=new ResultMsg();
+        List<ZYXXchuangwei> chuangwei=dataGetService.getZYXXChuangwei(param);//床位情况
+        List<ZYXXzhuanke> zhuangke=dataGetService.getZYXXZhuanke(param);//转科情况
+        List<ZYXXzhuyuanbr> bingren=dataGetService.getZYXXBingren(param);//病人情况
+        Map<String,Object> data=new HashMap<>();
+        data.put("chuangwei",chuangwei);
+        data.put("zhuangke",zhuangke);
+        data.put("bingren",bingren);
+        msg.setData(data);
+        return msg;
+    }
     /**
      *
      * 医技信息

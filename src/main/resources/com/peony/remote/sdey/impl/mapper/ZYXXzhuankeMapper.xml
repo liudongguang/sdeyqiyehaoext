@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.ZYXXzhuankeMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.ZYXXzhuanke">
+        <result column="zhuangchukeshi" jdbcType="VARCHAR" property="zhuangchukeshi"/>
+        <result column="zhuangrukeshi" jdbcType="VARCHAR" property="zhuangrukeshi"/>
+        <result column="zhuankeshijian" jdbcType="DATE" property="zhuankeshijian"/>
+    </resultMap>
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+        SELECT
+           原科室 as zhuangchukeshi,现科室 as zhuangrukeshi,zksj as zhuankeshijian
+        FROM hisrun.V_YZCX_ZKJL
+        WHERE zksj BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

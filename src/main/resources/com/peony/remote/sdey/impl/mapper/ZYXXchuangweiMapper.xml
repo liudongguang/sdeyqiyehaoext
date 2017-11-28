@@ -2,14 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.peony.remote.sdey.impl.mapper.ZYXXchuangweiMapper">
     <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.ZYXXchuangwei">
-        <result column="rq" jdbcType="DATE" property="rq"/>
+        <result column="rq" jdbcType="VARCHAR" property="rq"/>
         <result column="shizhanshu" jdbcType="NUMERIC" property="shizhanshu"/>
         <result column="kaifangshu" jdbcType="NUMERIC" property="kaifangshu"/>
     </resultMap>
-    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
            rq,实占床日数 as shizhanshu,开放床日数 as kaifangshu
         FROM hisrun.V_YZCX_CWXX
-        WHERE rq BETWEEN #{starte} AND #{end}
+        WHERE rq BETWEEN #{starteStr,jdbcType=VARCHAR} AND #{endStr,jdbcType=VARCHAR}
     </select>
 </mapper>

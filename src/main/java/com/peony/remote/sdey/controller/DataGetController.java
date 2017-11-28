@@ -115,7 +115,7 @@ public class DataGetController {
      * @param param
      * @return
      */
-    @RequestMapping("/getfyxx")
+    @RequestMapping("/getzyxx")
     @ResponseBody
     public ResultMsg getzyxx(ImportParam param) {
         ResultMsg msg=new ResultMsg();

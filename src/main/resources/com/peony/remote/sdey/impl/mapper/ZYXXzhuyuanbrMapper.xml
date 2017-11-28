@@ -12,7 +12,7 @@
         <result column="cyrq" jdbcType="DATE" property="cyrq"/>
         <result column="cyfs" jdbcType="VARCHAR" property="cyfs"/>
     </resultMap>
-    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
           brxb,csny,hkdz,brqk,brks,brbq,ryrq,cyrq,cyfs
         FROM hisrun.V_YZCX_ZYBR

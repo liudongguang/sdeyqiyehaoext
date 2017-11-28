@@ -3,15 +3,15 @@ package com.peony.remote.sdey.api.po;
 import java.util.Date;
 
 public class ZYXXchuangwei {
-    private Date rq;//日期
+    private String rq;//日期
     private Integer shizhanshu;//实占床位数
     private Integer kaifangshu;//开放床位数
 
-    public Date getRq() {
+    public String getRq() {
         return rq;
     }
 
-    public void setRq(Date rq) {
+    public void setRq(String rq) {
         this.rq = rq;
     }
 

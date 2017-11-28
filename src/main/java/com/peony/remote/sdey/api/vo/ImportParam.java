@@ -13,6 +13,16 @@ public class ImportParam {
     private Date starte;
     private Date end;
     private Integer delFyState;//删除已有费用
+    private String starteStr;
+    private String endStr;
+    public void initStr(){
+        if(starte!=null){
+            this.starteStr= DateUtil.yyyy_MM_ddFormat.format(starte);
+        }
+        if(end!=null){
+            this.endStr=DateUtil.yyyy_MM_ddFormat.format(end);
+        }
+    }
 
     public Date getStarte() {
         return starte;
@@ -32,6 +42,24 @@ public class ImportParam {
         }
     }
 
+    public String getStarteStr() {
+
+        return starteStr;
+    }
+
+    public void setStarteStr(String starteStr) {
+        this.starteStr = starteStr;
+    }
+
+    public String getEndStr() {
+
+        return endStr;
+    }
+
+    public void setEndStr(String endStr) {
+        this.endStr = endStr;
+    }
+
     public Integer getDelFyState() {
         return delFyState;
     }
@@ -46,6 +74,8 @@ public class ImportParam {
                 "starte=" + starte +
                 ", end=" + end +
                 ", delFyState=" + delFyState +
+                ", starteStr='" + starteStr + '\'' +
+                ", endStr='" + endStr + '\'' +
                 '}';
     }
 }

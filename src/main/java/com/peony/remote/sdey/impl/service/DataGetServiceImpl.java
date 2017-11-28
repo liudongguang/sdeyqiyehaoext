@@ -95,6 +95,7 @@ public class DataGetServiceImpl implements DataGetService {
 
     @Override
     public List<ZYXXchuangwei> getZYXXChuangwei(ImportParam param) {
+        param.initStr();
         return zyxXchuangweiMapper.getInfoByBetweenDate(param);
     }
 

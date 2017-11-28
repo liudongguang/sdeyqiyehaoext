@@ -6,7 +6,7 @@
         <result column="zhuangrukeshi" jdbcType="VARCHAR" property="zhuangrukeshi"/>
         <result column="zhuankeshijian" jdbcType="DATE" property="zhuankeshijian"/>
     </resultMap>
-    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
            原科室 as zhuangchukeshi,现科室 as zhuangrukeshi,zksj as zhuankeshijian
         FROM hisrun.V_YZCX_ZKJL

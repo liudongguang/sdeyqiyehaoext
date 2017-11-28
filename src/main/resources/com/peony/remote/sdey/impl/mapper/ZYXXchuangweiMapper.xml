@@ -5,10 +5,12 @@
         <result column="rq" jdbcType="VARCHAR" property="rq"/>
         <result column="shizhanshu" jdbcType="NUMERIC" property="shizhanshu"/>
         <result column="kaifangshu" jdbcType="NUMERIC" property="kaifangshu"/>
+        <result column="ks" jdbcType="VARCHAR" property="ks"/>
+        <result column="kslb" jdbcType="NUMERIC" property="kslb"/>
     </resultMap>
     <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
-           rq,实占床日数 as shizhanshu,开放床日数 as kaifangshu
+           rq,实占床日数 as shizhanshu,开放床日数 as kaifangshu,ks,kslb
         FROM hisrun.V_YZCX_CWXX
         WHERE rq BETWEEN #{starteStr,jdbcType=VARCHAR} AND #{endStr,jdbcType=VARCHAR}
     </select>

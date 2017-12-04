@@ -18,4 +18,7 @@
         FROM hisrun.V_YZCX_ZYBR
         WHERE ryrq BETWEEN #{starte} AND #{end}
     </select>
+    <select id="getZYXXzaiyuan" resultType="int">
+        SELECT count(1) from hisrun.V_YZCX_ZYBR where cyrq is null
+    </select>
 </mapper>

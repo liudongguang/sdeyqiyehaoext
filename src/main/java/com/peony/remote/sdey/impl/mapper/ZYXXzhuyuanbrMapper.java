@@ -12,4 +12,6 @@ import java.util.List;
  */
 public interface ZYXXzhuyuanbrMapper extends Mapper<ZYXXzhuyuanbr> {
     List<ZYXXzhuyuanbr> getInfoByBetweenDate(ImportParam param);
+
+    int getZYXXzaiyuan();
 }

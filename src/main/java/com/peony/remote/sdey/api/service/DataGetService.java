@@ -64,4 +64,10 @@ public interface DataGetService {
      * @return
      */
     List<ZYXXzhuyuanbr> getZYXXBingren(ImportParam param);
+
+    /**
+     * 获取在院信息
+     * @return
+     */
+    int getZYXXzaiyuan();
 }

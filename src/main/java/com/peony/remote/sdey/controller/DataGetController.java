@@ -122,10 +122,12 @@ public class DataGetController {
         List<ZYXXchuangwei> chuangwei=dataGetService.getZYXXChuangwei(param);//床位情况
         List<ZYXXzhuanke> zhuangke=dataGetService.getZYXXZhuanke(param);//转科情况
         List<ZYXXzhuyuanbr> bingren=dataGetService.getZYXXBingren(param);//病人情况
+        int zaiyuanNum=dataGetService.getZYXXzaiyuan();//在院人数
         Map<String,Object> data=new HashMap<>();
         data.put("chuangwei",chuangwei);
         data.put("zhuangke",zhuangke);
         data.put("bingren",bingren);
+        data.put("zaiyuanNum",zaiyuanNum);
         msg.setData(data);
         return msg;
     }

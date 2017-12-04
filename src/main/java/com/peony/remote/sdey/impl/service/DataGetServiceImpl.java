@@ -108,4 +108,9 @@ public class DataGetServiceImpl implements DataGetService {
     public List<ZYXXzhuyuanbr> getZYXXBingren(ImportParam param) {
         return zyxXzhuyuanbrMapper.getInfoByBetweenDate(param);
     }
+
+    @Override
+    public int getZYXXzaiyuan() {
+        return zyxXzhuyuanbrMapper.getZYXXzaiyuan();
+    }
 }

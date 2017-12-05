@@ -30,4 +30,36 @@
         FROM hisrun.V_YZCX_yjxx
         WHERE KDRQ BETWEEN #{starte} AND #{end}
     </select>
+    <select id="getyjxx_zy" resultType="com.peony.remote.sdey.api.po.YiJiInfo">
+        SELECT
+        BRBH,
+        BRXM,
+        KDKS,
+        YSDM,
+        ZXKS,
+        KDRQ,
+        ZXRQ,
+        FYXH,
+        FYMC,
+        FYGB,
+        HJJE
+        FROM hisrun.V_YZCX_yjxx_zy
+        WHERE KDRQ BETWEEN #{starte} AND #{end}
+    </select>
+    <select id="getyjxx_mz" resultType="com.peony.remote.sdey.api.po.YiJiInfo">
+        SELECT
+        BRBH,
+        BRXM,
+        KDKS,
+        YSDM,
+        ZXKS,
+        KDRQ,
+        ZXRQ,
+        FYXH,
+        FYMC,
+        FYGB,
+        HJJE
+        FROM hisrun.V_YZCX_yjxx_mz
+        WHERE KDRQ BETWEEN #{starte} AND #{end}
+    </select>
 </mapper>

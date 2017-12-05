@@ -13,4 +13,6 @@ import java.util.List;
  */
 public interface YijiMapper extends Mapper<YiJiInfo> {
     List<YiJiInfo> getyjxx(ImportParam param);
+    List<YiJiInfo> getyjxx_zy(ImportParam param);
+    List<YiJiInfo> getyjxx_mz(ImportParam param);
 }

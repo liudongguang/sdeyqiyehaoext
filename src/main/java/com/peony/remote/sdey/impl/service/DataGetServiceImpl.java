@@ -113,4 +113,14 @@ public class DataGetServiceImpl implements DataGetService {
     public int getZYXXzaiyuan() {
         return zyxXzhuyuanbrMapper.getZYXXzaiyuan();
     }
+
+    @Override
+    public List<YiJiInfo> getyjxx_mz(ImportParam param) {
+        return yijiMapper.getyjxx_mz(param);
+    }
+
+    @Override
+    public List<YiJiInfo> getyjxx_zy(ImportParam param) {
+        return yijiMapper.getyjxx_zy(param);
+    }
 }

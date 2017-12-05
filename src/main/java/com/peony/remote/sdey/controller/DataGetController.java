@@ -140,16 +140,15 @@ public class DataGetController {
     @RequestMapping("/getyjxx")
     @ResponseBody
     public ResultMsg getyjxx(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
-        List<YiJiInfo> rs = dataGetService.getyjxx(param);
+        List<YiJiInfo> mzyiji = dataGetService.getyjxx_mz(param);
+        List<YiJiInfo> zyyiji = dataGetService.getyjxx_zy(param);
+        List<YJHLInfo> yjhl = dataGetService.getyjhl(param);
+        Map<String,Object> data=new HashMap<>();
+        data.put("mzyiji",mzyiji);
+        data.put("zyyiji",zyyiji);
+        data.put("yjhl",yjhl);
         ResultMsg msg=new ResultMsg();
-        msg.setData(rs);
+        msg.setData(data);
         return msg;
     }
 

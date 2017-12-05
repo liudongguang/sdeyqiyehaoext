@@ -70,4 +70,18 @@ public interface DataGetService {
      * @return
      */
     int getZYXXzaiyuan();
+
+    /**
+     * 门诊医技
+     * @param param
+     * @return
+     */
+    List<YiJiInfo> getyjxx_mz(ImportParam param);
+
+    /**
+     * 住院医技
+     * @param param
+     * @return
+     */
+    List<YiJiInfo> getyjxx_zy(ImportParam param);
 }

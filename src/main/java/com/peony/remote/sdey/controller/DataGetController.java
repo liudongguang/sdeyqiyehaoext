@@ -155,9 +155,9 @@ public class DataGetController {
     @RequestMapping("/getHuanZhexx")
     @ResponseBody
     public ResultMsg getHuanZhexx(ImportParam param) {
-        List<YiJiInfo> mzyiji = dataGetService.getyjxx_mz(param);
+        List<HuanzheInfo> huanzhe = dataGetService.getHuanzheXX(param);
         Map<String,Object> data=new HashMap<>();
-        data.put("mzyiji",mzyiji);
+        data.put("huanzhe",huanzhe);
         ResultMsg msg=new ResultMsg();
         msg.setData(data);
         return msg;

@@ -84,4 +84,11 @@ public interface DataGetService {
      * @return
      */
     List<YiJiInfo> getyjxx_zy(ImportParam param);
+
+    /**
+     * 患者档案
+     * @param param
+     * @return
+     */
+    List<HuanzheInfo> getHuanzheXX(ImportParam param);
 }

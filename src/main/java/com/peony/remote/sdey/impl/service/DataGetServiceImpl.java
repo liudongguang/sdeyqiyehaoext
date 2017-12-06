@@ -42,6 +42,8 @@ public class DataGetServiceImpl implements DataGetService {
     private ZYXXzhuankeMapper zyxXzhuankeMapper;//
     @Autowired
     private ZYXXzhuyuanbrMapper zyxXzhuyuanbrMapper;//
+    @Autowired
+    private HuanzheInfoMapper huanzheInfoMapper;//
 
     @Override
     public List<MenZhenLiang> getmzxx(ImportParam param) {
@@ -122,5 +124,10 @@ public class DataGetServiceImpl implements DataGetService {
     @Override
     public List<YiJiInfo> getyjxx_zy(ImportParam param) {
         return yijiMapper.getyjxx_zy(param);
+    }
+
+    @Override
+    public List<HuanzheInfo> getHuanzheXX(ImportParam param) {
+        return huanzheInfoMapper.getInfoByBetweenDate(param);
     }
 }

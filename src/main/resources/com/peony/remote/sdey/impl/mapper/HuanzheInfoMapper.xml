@@ -6,10 +6,10 @@
         <result column="brxm" jdbcType="VARCHAR" property="brxm"/>
         <result column="brxm" jdbcType="VARCHAR" property="brxm"/>
         <result column="brxb" jdbcType="VARCHAR" property="brxb"/>
-        <result column="jzrq" jdbcType="DATE" property="jzrq"/>
+        <result column="jdrq" jdbcType="DATE" property="jdrq"/>
     </resultMap>
     <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
-          select csny,brxm,brxm,brxb,jzrq from hisrun.V_YZCX_MZBRDA
+          select csny,brxm,brxm,brxb,jdrq from hisrun.V_YZCX_MZBRDA
           WHERE jzrq BETWEEN #{starte} AND #{end}
     </select>
 </mapper>

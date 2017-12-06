@@ -90,5 +90,5 @@ public interface DataGetService {
      * @param param
      * @return
      */
-    List<HuanzheInfo> getHuanzheXX(ImportParam param);
+    List<HuanzheInfo> getHuanzheBanKaXX(ImportParam param);
 }

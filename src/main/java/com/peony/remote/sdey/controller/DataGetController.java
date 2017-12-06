@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.xml.transform.Result;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -152,12 +151,17 @@ public class DataGetController {
         return msg;
     }
 
+    /**
+     * 患者档案-办卡
+     * @param param
+     * @return
+     */
     @RequestMapping("/getHuanZhexx")
     @ResponseBody
     public ResultMsg getHuanZhexx(ImportParam param) {
-        List<HuanzheInfo> huanzhe = dataGetService.getHuanzheXX(param);
+        List<HuanzheInfo> bankaxx = dataGetService.getHuanzheBanKaXX(param);
         Map<String,Object> data=new HashMap<>();
-        data.put("huanzhe",huanzhe);
+        data.put("bankaxx",bankaxx);
         ResultMsg msg=new ResultMsg();
         msg.setData(data);
         return msg;

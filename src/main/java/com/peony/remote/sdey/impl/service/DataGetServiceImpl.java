@@ -127,7 +127,7 @@ public class DataGetServiceImpl implements DataGetService {
     }
 
     @Override
-    public List<HuanzheInfo> getHuanzheXX(ImportParam param) {
+    public List<HuanzheInfo> getHuanzheBanKaXX(ImportParam param) {
         return huanzheInfoMapper.getInfoByBetweenDate(param);
     }
 }

@@ -7,7 +7,7 @@ public class HuanzheInfo {
    private Date csny;
    private String brxb;
    private String ksdm;
-   private Date jzrq;
+   private Date jdrq;
 
     public String getBrxm() {
         return brxm;
@@ -41,11 +41,11 @@ public class HuanzheInfo {
         this.ksdm = ksdm;
     }
 
-    public Date getJzrq() {
-        return jzrq;
+    public Date getJdrq() {
+        return jdrq;
     }
 
-    public void setJzrq(Date jzrq) {
-        this.jzrq = jzrq;
+    public void setJdrq(Date jdrq) {
+        this.jdrq = jdrq;
     }
 }

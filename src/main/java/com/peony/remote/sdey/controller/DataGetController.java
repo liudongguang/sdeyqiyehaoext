@@ -152,6 +152,17 @@ public class DataGetController {
         return msg;
     }
 
+    @RequestMapping("/getHuanZhexx")
+    @ResponseBody
+    public ResultMsg getHuanZhexx(ImportParam param) {
+        List<YiJiInfo> mzyiji = dataGetService.getyjxx_mz(param);
+        Map<String,Object> data=new HashMap<>();
+        data.put("mzyiji",mzyiji);
+        ResultMsg msg=new ResultMsg();
+        msg.setData(data);
+        return msg;
+    }
+
     /**
      *
      * 医技护理信息

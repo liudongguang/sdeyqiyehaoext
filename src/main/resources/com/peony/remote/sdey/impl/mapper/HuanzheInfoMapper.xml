@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.peony.remote.sdey.impl.mapper.HuanzheInfoMapper">
+    <resultMap id="BaseResultMap" type="com.peony.remote.sdey.api.po.HuanzheInfo">
+        <result column="csny" jdbcType="DATE" property="csny"/>
+        <result column="brxm" jdbcType="VARCHAR" property="brxm"/>
+        <result column="brxm" jdbcType="VARCHAR" property="brxm"/>
+        <result column="brxb" jdbcType="VARCHAR" property="brxb"/>
+        <result column="jzrq" jdbcType="DATE" property="jzrq"/>
+    </resultMap>
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+          select csny,brxm,brxm,brxb,jzrq from hisrun.V_YZCX_MZBRDA
+          WHERE jzrq BETWEEN #{starte} AND #{end}
+    </select>
+</mapper>

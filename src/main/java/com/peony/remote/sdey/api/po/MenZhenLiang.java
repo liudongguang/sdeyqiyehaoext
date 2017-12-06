@@ -19,7 +19,7 @@ public class MenZhenLiang {
     @Column(name = "YSMC")
     private String ysmc;
     @Column(name = "SFJZ")
-    private Integer sfjz;
+    private Integer sfjz;//0  普通  1 急诊
 
     public Date getGhrq() {
         return ghrq;

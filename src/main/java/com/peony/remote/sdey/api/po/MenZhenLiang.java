@@ -21,6 +21,25 @@ public class MenZhenLiang {
     @Column(name = "SFJZ")
     private Integer sfjz;//0  普通  1 急诊
 
+    private Date csny;//出生年月
+    private String brxb;//病人性别
+
+    public Date getCsny() {
+        return csny;
+    }
+
+    public void setCsny(Date csny) {
+        this.csny = csny;
+    }
+
+    public String getBrxb() {
+        return brxb;
+    }
+
+    public void setBrxb(String brxb) {
+        this.brxb = brxb;
+    }
+
     public Date getGhrq() {
         return ghrq;
     }

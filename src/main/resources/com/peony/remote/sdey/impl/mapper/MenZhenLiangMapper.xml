@@ -10,8 +10,13 @@
         <result column="KSMC" jdbcType="VARCHAR" property="ksmc"/>
         <result column="YSMC" jdbcType="VARCHAR" property="ysmc"/>
         <result column="SFJZ" jdbcType="NUMERIC" property="sfjz"/>
+
+        <result column="csny" jdbcType="DATE" property="csny"/>
+        <result column="brxb" jdbcType="VARCHAR" property="brxb"/>
     </resultMap>
    <select id="getmzxx" resultMap="BaseResultMap" resultType="com.peony.remote.sdey.api.vo.ImportParam">
-       select BRID,GHRQ,KSMC,YSMC,SFJZ from hisrun.V_YZCX_MZXX_mzl where GHRQ BETWEEN #{starte} and #{end}
+       select menzhen.BRID,menzhen.GHRQ,menzhen.KSMC,menzhen.YSMC,menzhen.SFJZ,dangan.csny,dangan.brxb from
+       HISRUN.V_YZCX_MZXX_MZL menzhen LEFT JOIN HISRUN.V_YZCX_MZBRDA dangan on menzhen.BRID=dangan.BRID
+       where menzhen.GHRQ BETWEEN #{starte} and #{end}
    </select>
 </mapper>

@@ -91,4 +91,18 @@ public interface DataGetService {
      * @return
      */
     List<HuanzheInfo> getHuanzheBanKaXX(ImportParam param);
+
+    /**
+     * 手术安排
+     * @param param
+     * @return
+     */
+    List<SSXX_anpai> getShouShuAnPai(ImportParam param);
+
+    /**
+     * 实际手术
+     * @param param
+     * @return
+     */
+    List<SSXX_info> getShouShuXX(ImportParam param);
 }

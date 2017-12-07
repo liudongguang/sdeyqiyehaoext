@@ -166,26 +166,21 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
-
     /**
-     *
-     * 医技护理信息
+     * 手术信息
      * @param param
      * @return
      */
-    @RequestMapping("/getyjhl")
+    @RequestMapping("/getShouShuXX")
     @ResponseBody
-    public ResultMsg getyjhl(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
-        List<YJHLInfo> rs = dataGetService.getyjhl(param);
+    public ResultMsg getShouShuXX(ImportParam param) {
+        List<SSXX_anpai> ssap = dataGetService.getShouShuAnPai(param);
+        List<SSXX_info> ss = dataGetService.getShouShuXX(param);
+        Map<String,Object> data=new HashMap<>();
+        data.put("ssap",ssap);
+        data.put("ss",ss);
         ResultMsg msg=new ResultMsg();
-        msg.setData(rs);
+        msg.setData(data);
         return msg;
     }
 

@@ -1,7 +1,9 @@
 package com.peony.remote.sdey.api.service;
 
+import com.github.pagehelper.PageInfo;
 import com.peony.remote.sdey.api.po.*;
 import com.peony.remote.sdey.api.vo.ImportParam;
+import com.peony.remote.sdey.api.vo.PageParam;
 
 import java.util.List;
 
@@ -105,4 +107,6 @@ public interface DataGetService {
      * @return
      */
     List<SSXX_info> getShouShuXX(ImportParam param);
+
+    PageInfo<SSXX_anpai> getShouShuXX_One(ImportParam param, PageParam pageParam);
 }

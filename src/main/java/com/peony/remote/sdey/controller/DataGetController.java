@@ -1,9 +1,11 @@
 package com.peony.remote.sdey.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.peony.base.api.vo.ResultMsg;
 import com.peony.remote.sdey.api.po.*;
 import com.peony.remote.sdey.api.service.DataGetService;
 import com.peony.remote.sdey.api.vo.ImportParam;
+import com.peony.remote.sdey.api.vo.PageParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -182,6 +184,19 @@ public class DataGetController {
         ResultMsg msg=new ResultMsg();
         msg.setData(data);
         return msg;
+    }
+
+    @RequestMapping("/getShouShuXX_One")
+    @ResponseBody
+    public Map<String,Object> getShouShuXX_One(ImportParam param,PageParam pageParam) {
+        PageInfo<SSXX_anpai> ssap = dataGetService.getShouShuXX_One(param,pageParam);
+        ResultMsg msg=new ResultMsg();
+        Map<String,Object> data=new HashMap<>();
+        data.put("list",ssap.getList());
+        data.put("pageNum",ssap.getPageNum());
+        data.put("pages",ssap.getPages());
+        msg.setData(data);
+        return data;
     }
 
     /**

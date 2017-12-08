@@ -1,8 +1,11 @@
 package com.peony.remote.sdey.impl.service;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.peony.remote.sdey.api.po.*;
 import com.peony.remote.sdey.api.service.DataGetService;
 import com.peony.remote.sdey.api.vo.ImportParam;
+import com.peony.remote.sdey.api.vo.PageParam;
 import com.peony.remote.sdey.impl.mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,7 +48,10 @@ public class DataGetServiceImpl implements DataGetService {
     @Autowired
     private HuanzheInfoMapper huanzheInfoMapper;//
     ////////////////////////////////////////////////////////////
-
+    @Autowired
+    private SSXXAnpaiMapper ssxxAnpaiMapper;
+    @Autowired
+    private SSXXInfoMapper ssxxInfoMapper;
 
     @Override
     public List<MenZhenLiang> getmzxx(ImportParam param) {
@@ -135,11 +141,17 @@ public class DataGetServiceImpl implements DataGetService {
 
     @Override
     public List<SSXX_anpai> getShouShuAnPai(ImportParam param) {
-        return null;
+        return ssxxAnpaiMapper.getInfoByBetweenDate(param);
     }
 
     @Override
     public List<SSXX_info> getShouShuXX(ImportParam param) {
-        return null;
+        return ssxxInfoMapper.getInfoByBetweenDate(param);
+    }
+
+    @Override
+    public PageInfo<SSXX_anpai> getShouShuXX_One(ImportParam param, PageParam pageParam) {
+        PageInfo<SSXX_anpai> pageInfo = PageHelper.startPage(pageParam.getPageNum(), pageParam.getPageSize(), true).doSelectPageInfo(() -> ssxxAnpaiMapper.getInfoByBetweenDate(param));
+        return pageInfo;
     }
 }

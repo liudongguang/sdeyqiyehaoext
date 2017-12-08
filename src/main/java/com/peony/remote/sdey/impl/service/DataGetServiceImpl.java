@@ -79,8 +79,8 @@ public class DataGetServiceImpl implements DataGetService {
     }
 
     @Override
-    public List<HzxxInfo> gethzxx(ImportParam param) {
-        return hzxxMapper.gethzxx(param);
+    public List<HzxxInfo> gethzxx_shenqing(ImportParam param) {
+        return hzxxMapper.gethzxx_shenqing(param);
     }
 
     @Override
@@ -153,5 +153,10 @@ public class DataGetServiceImpl implements DataGetService {
     public PageInfo<SSXX_anpai> getShouShuXX_One(ImportParam param, PageParam pageParam) {
         PageInfo<SSXX_anpai> pageInfo = PageHelper.startPage(pageParam.getPageNum(), pageParam.getPageSize(), true).doSelectPageInfo(() -> ssxxAnpaiMapper.getInfoByBetweenDate(param));
         return pageInfo;
+    }
+
+    @Override
+    public List<HzxxInfo> gethzxx_jieshou(ImportParam param) {
+        return hzxxMapper.gethzxx_jieshou(param);
     }
 }

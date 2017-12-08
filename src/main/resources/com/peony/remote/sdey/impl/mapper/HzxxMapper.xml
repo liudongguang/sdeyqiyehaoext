@@ -12,20 +12,22 @@
         <result column="SQKS" jdbcType="VARCHAR" property="sqks"/>
         <result column="QRGH" jdbcType="VARCHAR" property="qrgh"/>
         <result column="QRSJ" jdbcType="DATE" property="qrsj"/>
+        <result column="KS" jdbcType="DATE" property="ks"/>
+        <result column="YGXM" jdbcType="DATE" property="ygxm"/>
     </resultMap>
 
-    <select id="gethzxx" resultMap="BaseResultMap">
+    <select id="gethzxx_shenqing" resultMap="BaseResultMap">
         SELECT
-            ZYHM,
-            BRXM,
-            BRXB,
-            BRKS,
             SQSJ,
-            QRBZ,
-            SQKS,
-            QRGH,
-            QRSJ
+            SQKS
         FROM hisrun.v_yzcx_hzxx
         WHERE SQSJ BETWEEN #{starte} AND #{end}
+    </select>
+    <select id="gethzxx_jieshou" resultMap="BaseResultMap">
+        SELECT
+        QRSJ,
+        KS
+        FROM hisrun.v_yzcx_hzxx
+        WHERE QRSJ BETWEEN #{starte} AND #{end}
     </select>
 </mapper>

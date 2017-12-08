@@ -16,7 +16,25 @@ public class HzxxInfo {
     private String qrbz;
     private String sqks;
     private String qrgh;
-    private Date qrsj;
+    private Date qrsj;//确认的接受时间
+    private String ks;//确认接受科室
+    private String ygxm;//接受医生
+
+    public String getKs() {
+        return ks;
+    }
+
+    public void setKs(String ks) {
+        this.ks = ks;
+    }
+
+    public String getYgxm() {
+        return ygxm;
+    }
+
+    public void setYgxm(String ygxm) {
+        this.ygxm = ygxm;
+    }
 
     public String getZyhm() {
         return zyhm;

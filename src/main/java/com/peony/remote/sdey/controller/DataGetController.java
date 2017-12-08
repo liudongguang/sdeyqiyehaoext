@@ -207,16 +207,13 @@ public class DataGetController {
     @RequestMapping("/gethzxx")
     @ResponseBody
     public ResultMsg gethzxx(ImportParam param) {
-        LocalDate start = LocalDate.of(2017, 3, 3);
-        LocalDate end = LocalDate.of(2017, 4, 3);
-        ZoneId zoneId = ZoneId.systemDefault();
-        ZonedDateTime zdtstart = start.atStartOfDay(zoneId);
-        ZonedDateTime zdtend = end.atStartOfDay(zoneId);
-        param.setStarte(Date.from(zdtstart.toInstant()));
-        param.setEnd(Date.from(zdtend.toInstant()));
-        List<HzxxInfo> rs = dataGetService.gethzxx(param);
+        List<HzxxInfo> shenqing = dataGetService.gethzxx_shenqing(param);
+        List<HzxxInfo> jieshou = dataGetService.gethzxx_jieshou(param);
         ResultMsg msg=new ResultMsg();
-        msg.setData(rs);
+        Map<String,Object> data=new HashMap<>();
+        data.put("shenqing",shenqing);
+        data.put("jieshou",jieshou);
+        msg.setData(data);
         return msg;
     }
 

@@ -11,5 +11,7 @@ import java.util.List;
  * Created by LiuDongguang on 2017/10/31.
  */
 public interface HzxxMapper extends Mapper<HzxxInfo> {
-    List<HzxxInfo> gethzxx(ImportParam param);
+    List<HzxxInfo> gethzxx_shenqing(ImportParam param);
+    List<HzxxInfo> gethzxx_jieshou(ImportParam param);
+
 }

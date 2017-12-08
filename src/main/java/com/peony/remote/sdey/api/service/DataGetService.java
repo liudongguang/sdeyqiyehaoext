@@ -21,7 +21,7 @@ public interface DataGetService {
 
     List<YJHLInfo> getyjhl(ImportParam param);
 
-    List<HzxxInfo> gethzxx(ImportParam param);
+    List<HzxxInfo> gethzxx_shenqing(ImportParam param);
 
     List<ZybrInfo> getzybr(ImportParam param);
 
@@ -109,4 +109,11 @@ public interface DataGetService {
     List<SSXX_info> getShouShuXX(ImportParam param);
 
     PageInfo<SSXX_anpai> getShouShuXX_One(ImportParam param, PageParam pageParam);
+
+    /**
+     * 获取会诊接受
+     * @param param
+     * @return
+     */
+    List<HzxxInfo> gethzxx_jieshou(ImportParam param);
 }

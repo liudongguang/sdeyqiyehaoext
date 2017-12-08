@@ -5,12 +5,18 @@
         <result column="ssrq" jdbcType="DATE" property="ssrq"/>
         <result column="ssfj" jdbcType="VARCHAR" property="ssfj"/>
         <result column="brks" jdbcType="VARCHAR" property="brks"/>
+
+        <result column="ssmc" jdbcType="VARCHAR" property="ssmc"/>
+        <result column="brxm" jdbcType="VARCHAR" property="brxm"/>
+        <result column="ssys" jdbcType="VARCHAR" property="ssys"/>
+        <result column="brnl" jdbcType="NUMERIC" property="brnl"/>
+        <result column="brxb" jdbcType="VARCHAR" property="brxb"/>
     </resultMap>
     <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
         SELECT
             ssrq,
             ssfj,
-            brks
+            brks,ssmc,brxm,ssys,brnl,brxb
         FROM hisrun.V_YZCX_SSAP
         WHERE ssrq BETWEEN #{starte} AND #{end}
     </select>

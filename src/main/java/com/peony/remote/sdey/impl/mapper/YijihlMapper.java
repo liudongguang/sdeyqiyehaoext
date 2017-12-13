@@ -1,5 +1,6 @@
 package com.peony.remote.sdey.impl.mapper;
 
+import com.github.pagehelper.PageInfo;
 import com.peony.remote.sdey.api.po.MenZhenLiang;
 import com.peony.remote.sdey.api.po.YJHLInfo;
 import com.peony.remote.sdey.api.po.YiJiInfo;
@@ -14,5 +15,5 @@ import java.util.List;
 public interface YijihlMapper extends Mapper<YJHLInfo> {
     List<YJHLInfo> getyjhl(ImportParam param);
 
-    void getInfoByBetweenDate(ImportParam param);
+    PageInfo<YJHLInfo> getInfoByBetweenDate(ImportParam param);
 }

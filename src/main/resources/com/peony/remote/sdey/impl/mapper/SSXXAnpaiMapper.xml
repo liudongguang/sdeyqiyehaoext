@@ -18,6 +18,6 @@
             ssfj,
             brks,ssmc,brxm,ssys,brnl,brxb
         FROM hisrun.V_YZCX_SSAP
-        WHERE ssrq BETWEEN #{starte} AND #{end} order by ssrq
+        WHERE ssrq BETWEEN #{starte} AND #{end} order by ssrq desc
     </select>
 </mapper>

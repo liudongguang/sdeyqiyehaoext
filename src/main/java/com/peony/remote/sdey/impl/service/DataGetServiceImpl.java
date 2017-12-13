@@ -159,4 +159,10 @@ public class DataGetServiceImpl implements DataGetService {
     public List<HzxxInfo> gethzxx_jieshou(ImportParam param) {
         return hzxxMapper.gethzxx_jieshou(param);
     }
+
+    @Override
+    public PageInfo<YJHLInfo> getyijihuliPageInfo(ImportParam param, PageParam pageParam) {
+        PageInfo<YJHLInfo> pageInfo = PageHelper.startPage(pageParam.getPageNum(), pageParam.getPageSize(), true).doSelectPageInfo(() -> yijihlMapper.getInfoByBetweenDate(param));
+        return pageInfo;
+    }
 }

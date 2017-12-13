@@ -143,16 +143,49 @@ public class DataGetController {
     public ResultMsg getyjxx(ImportParam param) {
         List<YiJiInfo> mzyiji = dataGetService.getyjxx_mz(param);
         List<YiJiInfo> zyyiji = dataGetService.getyjxx_zy(param);
-        List<YJHLInfo> yjhl = dataGetService.getyjhl(param);
         Map<String,Object> data=new HashMap<>();
         data.put("mzyiji",mzyiji);
         data.put("zyyiji",zyyiji);
+        ResultMsg msg=new ResultMsg();
+        msg.setData(data);
+        return msg;
+    }
+
+    /**
+     *
+     * 一级护理信息
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getyijihulixx")
+    @ResponseBody
+    public ResultMsg getyijihulixx(ImportParam param) {
+        List<YJHLInfo> yjhl = dataGetService.getyjhl(param);
+        Map<String,Object> data=new HashMap<>();
         data.put("yjhl",yjhl);
         ResultMsg msg=new ResultMsg();
         msg.setData(data);
         return msg;
     }
 
+    /**
+     * 一级护理 分页信息
+     * @param param
+     * @param pageParam
+     * @return
+     */
+    @RequestMapping("/yijihuliPageInfo")
+    @ResponseBody
+    public Map<String,Object> yijihuliPageInfo(ImportParam param,PageParam pageParam) {
+        PageInfo<YJHLInfo> yijihuili = dataGetService.getyijihuliPageInfo(param,pageParam);
+        ResultMsg msg=new ResultMsg();
+        Map<String,Object> data=new HashMap<>();
+        data.put("list",yijihuili.getList());
+        data.put("pageNum",yijihuili.getPageNum());
+        data.put("pages",yijihuili.getPages());
+        msg.setData(data);
+        return data;
+    }
     /**
      * 患者档案-办卡
      * @param param
@@ -216,6 +249,8 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
+
+
 
     /**
      * 病人

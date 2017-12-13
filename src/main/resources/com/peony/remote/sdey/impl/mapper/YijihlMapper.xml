@@ -26,4 +26,18 @@
         FROM hisrun.v_yzcx_yjhl
         WHERE RQ BETWEEN #{starte} AND #{end}
     </select>
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+        SELECT
+          RQ,
+            ZYHM,
+            BRXM,
+            BRXB,
+            BRKS,
+            BRBQ,
+            KSSJ,
+            TZSJ,
+            YZMC
+        FROM hisrun.v_yzcx_yjhl
+        WHERE KSSJ BETWEEN #{starte} AND #{end} order by KSSJ desc
+    </select>
 </mapper>

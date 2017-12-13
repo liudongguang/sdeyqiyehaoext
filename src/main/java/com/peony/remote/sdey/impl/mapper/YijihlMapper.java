@@ -13,4 +13,6 @@ import java.util.List;
  */
 public interface YijihlMapper extends Mapper<YJHLInfo> {
     List<YJHLInfo> getyjhl(ImportParam param);
+
+    void getInfoByBetweenDate(ImportParam param);
 }

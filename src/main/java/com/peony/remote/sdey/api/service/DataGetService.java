@@ -116,4 +116,12 @@ public interface DataGetService {
      * @return
      */
     List<HzxxInfo> gethzxx_jieshou(ImportParam param);
+
+    /**
+     * 一级护理 分页信息
+     * @param param
+     * @param pageParam
+     * @return
+     */
+    PageInfo<YJHLInfo> getyijihuliPageInfo(ImportParam param, PageParam pageParam);
 }

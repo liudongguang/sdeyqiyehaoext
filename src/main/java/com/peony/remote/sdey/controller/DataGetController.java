@@ -275,7 +275,7 @@ public class DataGetController {
     @RequestMapping("/getHisOffice")
     @ResponseBody
     public ResultMsg getHisOffice(ImportParam param) {
-        List<ZYXXchuangwei> hisOffice = dataGetService.getHisOffice(param);
+        List<YiJiInfo> hisOffice = dataGetService.getHisOffice(param);
         ResultMsg msg=new ResultMsg();
         msg.setData(hisOffice);
         return msg;

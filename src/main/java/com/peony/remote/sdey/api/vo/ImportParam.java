@@ -15,6 +15,10 @@ public class ImportParam {
     private Integer delFyState;//删除已有费用
     private String starteStr;
     private String endStr;
+    private String ksname;
+
+
+
     public void initStr(){
         if(starte!=null){
             this.starteStr= DateUtil.yyyy_MM_ddFormat.format(starte);
@@ -23,7 +27,13 @@ public class ImportParam {
             this.endStr=DateUtil.yyyy_MM_ddFormat.format(end);
         }
     }
+    public String getKsname() {
+        return ksname;
+    }
 
+    public void setKsname(String ksname) {
+        this.ksname = ksname;
+    }
     public Date getStarte() {
         return starte;
     }

@@ -26,7 +26,7 @@
         FROM hisrun.v_yzcx_yjhl
         WHERE RQ BETWEEN #{starte} AND #{end}
     </select>
-    <select id="getInfoByBetweenDate" resultMap="BaseResultMap">
+    <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
           RQ,
             ZYHM,
@@ -38,6 +38,12 @@
             TZSJ,
             YZMC
         FROM hisrun.v_yzcx_yjhl
-        WHERE KSSJ BETWEEN #{starte} AND #{end} order by KSSJ desc
+        <where>
+            KSSJ BETWEEN #{starte} AND #{end}
+            <if test="ksname != null and ksname.length()>0" >
+                and BRKS=#{ksname,jdbcType=VARCHAR}
+            </if>
+        </where>
+          order by KSSJ desc
     </select>
 </mapper>

@@ -40,7 +40,4 @@
         FROM hisrun.v_yzcx_yjhl
         WHERE KSSJ BETWEEN #{starte} AND #{end} order by KSSJ desc
     </select>
-    <select id="getHisOffice" resultMap="BaseResultMap">
-        select kdks from V_YZCX_YJXX where kdks is not null GROUP BY kdks
-    </select>
 </mapper>

@@ -111,7 +111,7 @@ public class DataGetServiceImpl implements DataGetService {
 
     @Override
     public List<YiJiInfo> getHisOffice(ImportParam param) {
-        return yijihlMapper.getHisOffice(param);
+        return yijiMapper.getHisOffice(param);
     }
 
     @Override

@@ -17,5 +17,4 @@ public interface YijihlMapper extends Mapper<YJHLInfo> {
 
     List<YJHLInfo> getInfoByBetweenDate(ImportParam param);
 
-    List<YiJiInfo> getHisOffice(ImportParam param);
 }

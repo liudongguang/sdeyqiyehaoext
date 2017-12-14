@@ -62,4 +62,7 @@
         FROM hisrun.V_YZCX_yjxx_mz
         WHERE KDRQ BETWEEN #{starte} AND #{end}
     </select>
+    <select id="getHisOffice" resultMap="BaseResultMap">
+        select kdks from hisrun.V_YZCX_YJXX where kdks is not null GROUP BY kdks
+    </select>
 </mapper>

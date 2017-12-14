@@ -110,6 +110,11 @@ public class DataGetServiceImpl implements DataGetService {
     }
 
     @Override
+    public List<ZYXXchuangwei> getHisOffice(ImportParam param) {
+        return zyxXchuangweiMapper.getHisOffice(param);
+    }
+
+    @Override
     public List<ZYXXzhuanke> getZYXXZhuanke(ImportParam param) {
         return zyxXzhuankeMapper.getInfoByBetweenDate(param);
     }

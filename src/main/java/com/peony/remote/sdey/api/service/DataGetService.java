@@ -54,6 +54,12 @@ public interface DataGetService {
     List<ZYXXchuangwei> getZYXXChuangwei(ImportParam param);
 
     /**
+     * 获取全部科室
+     * @param param
+     * @return
+     */
+    List<ZYXXchuangwei> getHisOffice(ImportParam param);
+    /**
      * 转科
      * @param param
      * @return

@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface ZYXXchuangweiMapper extends Mapper<ZYXXchuangwei> {
     List<ZYXXchuangwei> getInfoByBetweenDate(ImportParam param);
+
+    List<ZYXXchuangwei> getHisOffice(ImportParam param);
 }

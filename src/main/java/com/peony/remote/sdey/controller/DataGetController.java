@@ -272,5 +272,13 @@ public class DataGetController {
         msg.setData(rs);
         return msg;
     }
+    @RequestMapping("/getHisOffice")
+    @ResponseBody
+    public ResultMsg getHisOffice(ImportParam param) {
+        List<ZYXXchuangwei> hisOffice = dataGetService.getHisOffice(param);
+        ResultMsg msg=new ResultMsg();
+        msg.setData(hisOffice);
+        return msg;
+    }
 
 }

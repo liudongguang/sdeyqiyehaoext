@@ -15,6 +15,6 @@
         WHERE rq BETWEEN #{starteStr,jdbcType=VARCHAR} AND #{endStr,jdbcType=VARCHAR}
     </select>
     <select id="getHisOffice" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
-        select ks from V_YZCX_CWXX where KSLB=1 and ks is not null GROUP BY ks
+        select ks from hisrun.V_YZCX_CWXX where KSLB=1 and ks is not null GROUP BY ks
     </select>
 </mapper>

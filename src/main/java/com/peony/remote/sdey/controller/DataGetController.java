@@ -110,6 +110,21 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
+
+    /**
+     * 获取处方
+     * @param param
+     * @return
+     */
+    @RequestMapping("/getchufang")
+    @ResponseBody
+    public ResultMsg getchufang(ImportParam param) {
+        ResultMsg msg=new ResultMsg();
+        List<FYXXmenzhenchufang> menzhenfycf=dataGetService.getmenzhenfycf(param);//获取门诊处方
+        Map<String,Object> data=new HashMap<>();
+        msg.setData(menzhenfycf);
+        return msg;
+    }
     /**
      *
      * 住院信息

@@ -147,6 +147,13 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
+    @RequestMapping("/getzhuyuanbingren")
+    @ResponseBody
+    public List<ZYXXzhuyuanbr> getzhuyuanbingren(ImportParam param) {
+        List<ZYXXzhuyuanbr> bingren=dataGetService.getZYXXBingren(param);//病人情况
+        return bingren;
+    }
+
     /**
      *
      * 医技信息
@@ -198,6 +205,7 @@ public class DataGetController {
         data.put("list",yijihuili.getList());
         data.put("pageNum",yijihuili.getPageNum());
         data.put("pages",yijihuili.getPages());
+        data.put("total",yijihuili.getTotal());
         msg.setData(data);
         return data;
     }
@@ -243,6 +251,7 @@ public class DataGetController {
         data.put("list",ssap.getList());
         data.put("pageNum",ssap.getPageNum());
         data.put("pages",ssap.getPages());
+        data.put("total",ssap.getTotal());
         msg.setData(data);
         return data;
     }

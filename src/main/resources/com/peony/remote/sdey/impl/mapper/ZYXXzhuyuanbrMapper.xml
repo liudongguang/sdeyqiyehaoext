@@ -11,10 +11,11 @@
         <result column="ryrq" jdbcType="DATE" property="ryrq"/>
         <result column="cyrq" jdbcType="DATE" property="cyrq"/>
         <result column="cyfs" jdbcType="VARCHAR" property="cyfs"/>
+        <result column="lxdh" jdbcType="VARCHAR" property="lxdh"/>
     </resultMap>
     <select id="getInfoByBetweenDate" resultMap="BaseResultMap" parameterType="com.peony.remote.sdey.api.vo.ImportParam">
         SELECT
-          brxb,csny,hkdz,brqk,brks,brbq,ryrq,cyrq,cyfs
+          brxb,csny,hkdz,brqk,brks,brbq,ryrq,cyrq,cyfs,lxdh
         FROM hisrun.V_YZCX_ZYBR
         WHERE ryrq BETWEEN #{starte} AND #{end}
     </select>

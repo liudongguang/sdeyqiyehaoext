@@ -147,6 +147,12 @@ public class DataGetController {
         msg.setData(data);
         return msg;
     }
+
+    /**
+     * 获取入院人信息
+     * @param param
+     * @return
+     */
     @RequestMapping("/getzhuyuanbingren")
     @ResponseBody
     public List<ZYXXzhuyuanbr> getzhuyuanbingren(ImportParam param) {
@@ -296,6 +302,12 @@ public class DataGetController {
         msg.setData(rs);
         return msg;
     }
+
+    /**
+     * 获取科室
+     * @param param
+     * @return
+     */
     @RequestMapping("/getHisOffice")
     @ResponseBody
     public ResultMsg getHisOffice(ImportParam param) {
